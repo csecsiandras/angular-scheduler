@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { setLoading } from './store/meal/actions/meal.actions';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Hotel Meal Schedule';
 
-  onGuestAdded(guest: any) {}
+  onGuestAdded(guest: any) {
+    this.store.dispatch(setLoading({ isLoading: true }));
+  }
+
+  constructor(private readonly store: Store) {}
 }
 
 export interface Guest {
