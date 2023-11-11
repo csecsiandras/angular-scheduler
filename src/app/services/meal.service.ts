@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, delay, retryWhen, take, throwError } from 'rxjs';
 
-const MEAL_API_URL = '/api/words';
+const TEST_API_URL = '/api/test';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +10,18 @@ const MEAL_API_URL = '/api/words';
 export class MealService {
   constructor(private http: HttpClient) {}
 
-  readDB() {
-    return this.http.get<string[]>(MEAL_API_URL).pipe(
+  getTestData() {
+    return this.http.get<any>(TEST_API_URL).pipe(
       retryWhen((errors) => errors.pipe(delay(5000), take(2))),
       catchError(this.handleError)
     );
   }
+
+  // TODO:
+  // getMeal() {}
+
+  // TODO:
+  // storeMeal() {}
 
   private handleError(err: HttpErrorResponse) {
     if (err.error instanceof ErrorEvent) {

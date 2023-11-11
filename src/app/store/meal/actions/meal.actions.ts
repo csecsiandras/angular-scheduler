@@ -11,7 +11,4 @@ export const setLoading = createAction(
   props<SetLoading>()
 );
 
-export const getMeal = createAction(`${actionPrefix} Get words`);
-
-// TODO:
-export const storeMeal = createAction(`${actionPrefix} store Meal`);
+export const getTestData = createAction(`${actionPrefix} Get test data`);
