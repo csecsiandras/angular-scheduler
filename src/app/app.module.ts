@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, isDevMode } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GuestForm } from './components/guestForm/guestForm.component';
@@ -21,6 +21,7 @@ const environment = {
   declarations: [AppComponent, MealSchedule, GuestForm],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     StoreModule.forRoot(reducers, { metaReducers }),
