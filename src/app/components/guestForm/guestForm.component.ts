@@ -25,7 +25,7 @@ export class GuestForm implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.guestForm = this.formBuilder.group({
-      guestName: [{ value: '' }, {}],
+      name: [{ value: '' }, {}],
       startDate: [{ value: '' }, {}],
       endDate: [{ value: '' }, {}],
     });
