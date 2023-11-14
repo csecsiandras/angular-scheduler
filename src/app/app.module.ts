@@ -21,6 +21,7 @@ const environment = {
   declarations: [AppComponent, MealSchedule, GuestForm],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
