@@ -25,9 +25,9 @@ export class GuestForm implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.guestForm = this.formBuilder.group({
-      name: [{ value: '' }, {}],
-      startDate: [{ value: '' }, {}],
-      endDate: [{ value: '' }, {}],
+      name: ['', { validators: [Validators.required] }],
+      startDate: ['', { validators: [Validators.required] }],
+      endDate: ['', { validators: [Validators.required] }],
     });
   }
 
